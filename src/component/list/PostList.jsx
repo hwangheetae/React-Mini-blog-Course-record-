@@ -2,30 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import PostListItem from "./PostListItem";
 
-const Wrapper= styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 
     & > * {
-        :not(:last-child){
+        :not(:last-child) {
             margin-bottom: 16px;
         }
     }
 `;
 
-function PostListItem(props){
-    const {posts, onClickItem} =props;
+function PostList(props) {
+    const { posts, onClickItem } = props;
 
     return (
         <Wrapper>
             {posts.map((post, index) => {
-                return(
+                return (
                     <PostListItem
-                        key={props.id}
+                        key={post.id}
                         post={post}
-                        onClick={() =>{
+                        onClick={() => {
                             onClickItem(post);
                         }}
                     />

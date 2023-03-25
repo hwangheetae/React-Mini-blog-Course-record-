@@ -31,3 +31,5 @@ function PostListItem(props) {
         </Wrapper>
     )
 }
+
+export default PostListItem;
