@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import PostList from "../list/PostList";
 import Button from "../ui/Button";
@@ -25,24 +25,22 @@ const Container = styled.div`
     }
 `;
 
-function MainPage(props){
-    const {} =props;
-
+function MainPage(props) {
     const navigate = useNavigate();
 
-    return(
+    return (
         <Wrapper>
             <Container>
                 <Button
                     title="글 작성하기"
-                    onClick ={() =>{
+                    onClick={() => {
                         navigate("/post-write");
                     }}
                 />
-                
+
                 <PostList
                     posts={data}
-                    onClickItem={(item) =>{
+                    onClickItem={(item) => {
                         navigate(`/post/${item.id}`);
                     }}
                 />

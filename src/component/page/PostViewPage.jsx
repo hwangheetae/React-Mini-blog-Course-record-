@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
@@ -19,6 +18,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
     width: 100%;
     max-width: 720px;
+
     & > * {
         :not(:last-child) {
             margin-bottom: 16px;
@@ -48,22 +48,22 @@ const CommentLabel = styled.p`
     font-weight: 500;
 `;
 
-function PostViewPage(props){
+function PostViewPage(props) {
     const navigate = useNavigate();
-    const {postId}= useParams();
+    const { postId } = useParams();
 
-    const post =data.find((item)=> {
+    const post = data.find((item) => {
         return item.id == postId;
     });
 
-    const [comment, setComment] =useState("");
+    const [comment, setComment] = useState("");
 
     return (
         <Wrapper>
             <Container>
                 <Button
-                    title ="뒤로 가기"
-                    onClick={()=> {
+                    title="뒤로 가기"
+                    onClick={() => {
                         navigate("/");
                     }}
                 />
@@ -73,18 +73,18 @@ function PostViewPage(props){
                 </PostContainer>
 
                 <CommentLabel>댓글</CommentLabel>
-                <CommentList comments={post.comments}/>
-                
+                <CommentList comments={post.comments} />
+
                 <TextInput
                     height={40}
                     value={comment}
-                    onChange={(event)=>{
+                    onChange={(event) => {
                         setComment(event.target.value);
                     }}
                 />
                 <Button
                     title="댓글 작성하기"
-                    onClick={()=> {
+                    onClick={() => {
                         navigate("/");
                     }}
                 />
@@ -92,6 +92,5 @@ function PostViewPage(props){
         </Wrapper>
     );
 }
-
 
 export default PostViewPage;

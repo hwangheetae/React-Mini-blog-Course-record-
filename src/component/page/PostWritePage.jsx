@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
@@ -24,13 +24,13 @@ const Container = styled.div`
     }
 `;
 
-function PostWritePage(props){
+function PostWritePage(props) {
     const navigate = useNavigate();
 
-    const [title, setTitle] =useState("");
-    const[content, setContent]=useState("");
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
 
-    return(
+    return (
         <Wrapper>
             <Container>
                 <TextInput
@@ -48,10 +48,10 @@ function PostWritePage(props){
                         setContent(event.target.value);
                     }}
                 />
-                
+
                 <Button
                     title="글 작성하기"
-                    onClick={()=>{
+                    onClick={() => {
                         navigate("/");
                     }}
                 />
